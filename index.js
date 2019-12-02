@@ -1,5 +1,5 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
+var __importDefault = (this && this.__importDefault) || function(mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -16,17 +16,17 @@ class Server {
         this.routes();
     }
     config() {
-        this.app.set('port', process.env.PORT || 3000);
+        this.app.set('port', process.env.PORT || 4000);
         this.app.use(morgan_1.default('dev'));
         this.app.use(cors_1.default());
         this.app.use(express_1.default.json());
         this.app.use(express_1.default.urlencoded({ extended: true, limit: '10mb' }));
     }
     routes() {
-        this.app.use(indexRoutes_1.default);
-        this.app.use('/api/repo', repoRoutes_1.default);
-    }
-    // para iniciar el servidor
+            this.app.use(indexRoutes_1.default);
+            this.app.use('/api/repo', repoRoutes_1.default);
+        }
+        // para iniciar el servidor
     start() {
         this.app.listen(this.app.get('port'), () => {
             console.log('Server on port', this.app.get('port'));
