@@ -23,8 +23,9 @@ class Server {
         this.app.use(express_1.default.urlencoded({ extended: true, limit: '10mb' }));
     }
     routes() {
-            this.app.use(indexRoutes_1.default);
-            this.app.use('/api/repo', repoRoutes_1.default);
+            // this.app.use(indexRoutes_1.default);
+            // this.app.use('/api/repo', repoRoutes_1.default);
+            this.app.use(repoRoutes_1.default);
         }
         // para iniciar el servidor
     start() {

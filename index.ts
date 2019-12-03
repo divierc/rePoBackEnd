@@ -24,8 +24,9 @@ class Server {
   }
 
   routes(): void {
-    this.app.use(indexRoutes);
-    this.app.use('/api/repo',repoRoutes)
+    // this.app.use(indexRoutes);
+    // this.app.use('/api/repo',repoRoutes);
+    this.app.use(repoRoutes);
   }
   // para iniciar el servidor
   start(): void {
