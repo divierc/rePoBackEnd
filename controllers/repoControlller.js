@@ -253,13 +253,12 @@ class RepoController {
     saveEquipo(req, res) {
         console.log(req.body);
         const data = req.body;
-        let sql;
         let errors = 0;
         for (let dato of data) {
             let idHora;
             console.log('dato:');
             console.log(dato);
-            if (dato.ingreso === true) {
+            if (dato.idHoraIngreso != 0) {
                 idHora = dato.idHoraIngreso;
             }
             else {

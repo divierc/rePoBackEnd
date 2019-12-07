@@ -1,6 +1,6 @@
 import { Router }  from 'express';
 
-import repoControlller from '../controllers/repoControlller';
+import  repoControlller  from '../controllers/repoControlller'
 
 class RepoRoutes {
   public router: Router = Router();  

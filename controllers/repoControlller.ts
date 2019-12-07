@@ -243,8 +243,7 @@ public saveDatosEquipo(req: Request, res: Response): void {
   public saveEquipo(req: Request, res: Response): void {
     console.log(req.body);
     const data = req.body;
-    let sql;
-    let errors = 0;
+    let errors: number = 0;
     
     for (let dato of data)
     {
@@ -253,7 +252,7 @@ public saveDatosEquipo(req: Request, res: Response): void {
       console.log('dato:');
       console.log(dato);
       
-      if (dato.ingreso === true) {
+      if (dato.idHoraIngreso != 0) {
         idHora = dato.idHoraIngreso;
       } else {
         idHora = dato.idHoraSalida;
