@@ -10,6 +10,7 @@ const pool = mysql_pool.createPool(keys_1.default.database);
 // For pool initialization, see above
 pool.getConnection((err, conn) => {
     // Do something with the connection  `Select 'DB is connected' as message`
+    pool.execute(`SET time_zone = '-5:00';`);
     pool.execute(`SELECT schema_name as 'DB connected is' FROM information_schema.schemata  WHERE schema_name = '${keys_1.default.database.database}';`, function (error, rows) {
         // Connection is automatically released when query resolves
         if (error)
