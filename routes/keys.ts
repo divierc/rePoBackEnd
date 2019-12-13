@@ -10,7 +10,7 @@ export default {
     // multipleStatements: true
 
     host: "dbo.mysql.database.azure.com",
-    user: "DboAdmin@dbo",
+    user: "DboAdmon@dbo",
     password: "saFalcon1",
     database: "RePo",
     port: 3306,
